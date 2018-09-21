@@ -1,5 +1,6 @@
 package com.ipsmartboot.demo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
@@ -94,6 +95,24 @@ public class FirebaseClient {
 		List<String> photos = new ArrayList();
 		
 		students.forEach( (student)-> photos.addAll(student.Photos) );
+		
+		Slideshow ld = new Slideshow();
+		
+		try {
+			Slideshow.saveImage(photos, "./photos/");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Runtime rt = Runtime.getRuntime();
+		try {
+			Process pr = rt.exec("ffmpeg -f concat -r .5 -safe 0 -i photos/input.txt -vsync vfr -pix_fmt yuv420p photos/output.mp4");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+			e.printStackTrace();
+		}
 		
 		return photos;
 	}

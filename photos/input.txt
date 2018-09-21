@@ -1,0 +1,7 @@
+file '/Users/edmundom/smartBootService/photos/image1.jpg'
+file '/Users/edmundom/smartBootService/photos/image2.jpg'
+file '/Users/edmundom/smartBootService/photos/image3.jpg'
+file '/Users/edmundom/smartBootService/photos/image4.jpg'
+file '/Users/edmundom/smartBootService/photos/image5.jpg'
+file '/Users/edmundom/smartBootService/photos/image6.jpg'
+file '/Users/edmundom/smartBootService/photos/image6.jpg'
